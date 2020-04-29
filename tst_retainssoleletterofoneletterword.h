@@ -1,3 +1,14 @@
+#include <string>
+
+class Soundex {
+    // Die Verschlüsselungsmethode 'encode
+public:
+
+    std::string encode(const std::string& word){
+       std::string result = word;
+       return result;
+    }
+};
 
 
 #ifndef TST_RETAINSSOLELETTEROFONELETTERWORD_H
@@ -8,23 +19,14 @@
 
 using namespace testing;
 
-
-// Behalte den einzigen Buchstaben eine Ein-Buchstabenwortes
-// Testwörter wie
-//   A, N, Z,
-// werden durch den Soundex Algorithmus umgewandelt in
-//   A   ->  A     Regel 1a
-//   A   ->  A000  Regel 4b
-//
-// Der Algorithmus soll über eine Klasse Soundex implementiert
-// werden.
-//
-// TDD: Fehlschlagende Test leiten die Verbesserung des
-//      Code an.
-// TestRun 01
+// Unser Testwörter sind Wörter aus einem Buchstaben wie
+//   A,  N, Z
+// TestRun 01:   Prüfe Methodensignatur
 TEST(SoundexEncoding, RetainsSoleLetterOfOneLetterWord)
 {
-    Soundex soundex;
+Soundex soundex;
+
+EXPECT_EQ(soundex.encode("A"), "A");
 }
 
 #endif // TST_RETAINSSOLELETTEROFONELETTERWORD_H
